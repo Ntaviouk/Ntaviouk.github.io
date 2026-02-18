@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookStore - Онлайн-магазин книг</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">BookStore</div>
+        <nav>
+            <ul>
+                <li><a href="#catalog">Каталог</a></li>
+                <li><a href="#cart">Кошик</a></li>
+                <li><a href="#account">Мій акаунт</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="catalog">
+            <h2>Каталог книг</h2>
+            <div class="book-container" id="book-container">
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="cart">
+            <h2>Кошик</h2>
+            <div id="cart-items-container">
+                <p id="empty-cart-msg">Кошик порожній</p>
+            </div>
+            
+            <p><strong>Загальна сума: <span id="cart-total">0</span> грн</strong></p>
+        </section>
+
+        <hr>
+
+        <section id="account">
+            <h2>Мій акаунт</h2>
+            <p><strong>Користувач:</strong> Студент Політехніки</p>
+            <p><strong>Email:</strong> student@lpnu.ua</p>
+            <h3>Історія покупок:</h3>
+            <ul>
+                <li>Замовлення #123 - "Енеїда" (Виконано)</li>
+                <li>Замовлення #124 - "Місто" (В дорозі)</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 BookStore. Всі права захищені.</p>
+        <p>Адреса: м. Львів, вул. Степана Бандери, 12</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
