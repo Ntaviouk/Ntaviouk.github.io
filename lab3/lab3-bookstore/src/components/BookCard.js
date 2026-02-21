@@ -7,7 +7,7 @@ function BookCard({ book, addToCart }) {
         <img 
           src={book.image} 
           alt={book.title} 
-          style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '4px' }} 
+          className="book-cover"
         />
       </div>
       <h3>{book.title}</h3>

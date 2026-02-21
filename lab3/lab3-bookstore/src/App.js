@@ -36,31 +36,33 @@ function App() {
 
   return (
     <Router>
-      <header style={{ backgroundColor: '#2c3e50', padding: '20px', color: 'white', display: 'flex', justifyContent: 'space-between' }}>
-        <div style={{ fontSize: '24px', fontWeight: 'bold' }}>BookStore</div>
-        <nav style={{ display: 'flex', gap: '15px' }}>
-          <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Каталог</Link>
-          <Link to="/cart" style={{ color: 'white', textDecoration: 'none' }}>Кошик ({cart.length})</Link>
-          <Link to="/account" style={{ color: 'white', textDecoration: 'none' }}>Мій акаунт</Link>
+      <header>
+        <div className="logo">BookStore</div>
+        <nav>
+          <ul>
+            <li><Link to="/">Каталог</Link></li>
+            <li><Link to="/cart">Кошик ({cart.length})</Link></li>
+            <li><Link to="/account">Мій акаунт</Link></li>
+          </ul>
         </nav>
       </header>
 
-      <main style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
+      <main>
         <Routes>
           <Route path="/" element={<Catalog addToCart={addToCart} />} />
           
           <Route path="/cart" element={
-            <section>
+            <section id="cart">
               <h2>Кошик</h2>
               {cart.length === 0 ? <p>Кошик порожній</p> : cart.map(item => (
                 <CartItem key={item.id} item={item} changeQuantity={changeQuantity} removeFromCart={removeFromCart} />
               ))}
-              <h3 style={{ textAlign: 'right' }}>Загальна сума: {totalSum} грн</h3>
+              <h3 className="cart-total">Загальна сума: {totalSum} грн</h3>
             </section>
           } />
 
           <Route path="/account" element={
-            <section>
+            <section id="account">
               <h2>Мій акаунт</h2>
               <UserInfo />
             </section>

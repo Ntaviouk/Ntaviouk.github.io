@@ -23,15 +23,17 @@ function Catalog({ addToCart }) {
     <section>
       <h2>Каталог книг</h2>
       
-      <div style={{ marginBottom: '20px', display: 'flex', gap: '10px' }}>
+      <div className="catalog-toolbar">
         <strong>Фільтр за жанром:</strong>
-        <button onClick={() => setFilter('Всі')}>Всі</button>
-        <button onClick={() => setFilter('Поезія')}>Поезія</button>
-        <button onClick={() => setFilter('Проза')}>Проза</button>
-        <button onClick={() => setFilter('Драма')}>Драма</button>
+        <div className="filter-buttons">
+          <button className={filter === 'Всі' ? 'active-filter' : ''} onClick={() => setFilter('Всі')}>Всі</button>
+          <button className={filter === 'Поезія' ? 'active-filter' : ''} onClick={() => setFilter('Поезія')}>Поезія</button>
+          <button className={filter === 'Проза' ? 'active-filter' : ''} onClick={() => setFilter('Проза')}>Проза</button>
+          <button className={filter === 'Драма' ? 'active-filter' : ''} onClick={() => setFilter('Драма')}>Драма</button>
+        </div>
       </div>
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+      <div className="book-container">
         {filteredBooks.map(book => (
           <BookCard key={book.id} book={book} addToCart={addToCart} />
         ))}
