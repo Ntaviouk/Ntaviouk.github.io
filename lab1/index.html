@@ -1,0 +1,213 @@
+ <!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookStore - Онлайн-магазин книг</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">BookStore</div>
+        <nav>
+            <ul>
+                <li><a href="#catalog">Каталог</a></li>
+                <li><a href="#cart">Кошик</a></li>
+                <li><a href="#account">Мій акаунт</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="catalog">
+            <h2>Каталог книг</h2>
+            <div class="book-container">
+                <article class="book-card">
+                    <div class="book-image"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Slastion-Bandurist_Samiylo_Yasnij.jpg" alt="Кобзар"></div> <h3>Кобзар</h3>
+                    <p class="author">Автор: Тарас Шевченко</p>
+                    <p class="rating">Рейтинг: ★★★★★</p>
+                    <p class="price">350 грн</p>
+                    <button>Купити</button>
+                </article>
+
+                <article class="book-card">
+                    <div class="book-image"><img src="https://upload.wikimedia.org/wikipedia/uk/e/e3/Tini_predkiv.jpg" alt="Тіні забутих предків"></div>
+                    <h3>Тіні забутих предків</h3>
+                    <p class="author">Автор: Михайло Коцюбинський</p>
+                    <p class="rating">Рейтинг: ★★★★☆</p>
+                    <p class="price">280 грн</p>
+                    <button>Купити</button>
+                </article>
+
+                <article class="book-card">
+                    <div class="book-image"><img src="https://upload.wikimedia.org/wikipedia/uk/e/e5/%D0%9F%D0%BE%D1%81%D1%82%D0%B5%D1%80_%D1%84%D1%96%D0%BB%D1%8C%D0%BC%D1%83_%D0%97%D0%B0%D1%85%D0%B0%D1%80_%D0%91%D0%B5%D1%80%D0%BA%D1%83%D1%82_%282019%29.jpg" alt="Захар Беркут"></div>
+                    <h3>Захар Беркут</h3>
+                    <p class="author">Автор: Іван Франко</p>
+                    <p class="rating">Рейтинг: ★★★★★</p>
+                    <p class="price">300 грн</p>
+                    <button>Купити</button>
+                </article>
+                
+                 <article class="book-card">
+                    <div class="book-image"><img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=400&fit=crop" alt="Лісова пісня"></div>
+                    <h3>Лісова пісня</h3>
+                    <p class="author">Автор: Леся Українка</p>
+                    <p class="rating">Рейтинг: ★★★★★</p>
+                    <p class="price">250 грн</p>
+                    <button>Купити</button>
+                </article>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="cart">
+            <h2>Кошик</h2>
+            <div class="cart-item">
+                <span>Кобзар (Тарас Шевченко)</span>
+                <div class="cart-controls">
+                    <button>-</button>
+                    <span>1 шт.</span>
+                    <button>+</button>
+                    <button class="delete-btn">Видалити</button>
+                </div>
+            </div>
+            <p><strong>Загальна сума: 350 грн</strong></p>
+        </section>
+
+        <hr>
+
+        <section id="account">
+            <h2>Мій акаунт</h2>
+            
+            <!-- Режим перегляду -->
+            <div id="accountView" class="account-mode">
+                <p><strong>Користувач:</strong> <span id="viewName">Dmytro Daniuk</span></p>
+                <p><strong>Email:</strong> <span id="viewEmail">dimasdaniuk@gmail.com</span></p>
+                <p><strong>Телефон:</strong> <span id="viewPhone">+380 99 123 45 67</span></p>
+                <p><strong>Адреса:</strong> <span id="viewAddress">м. Львів, вул. Степана Бандери, 12</span></p>
+                <p><strong>Поштове відділення:</strong> <span id="viewPostal">Львів, №5</span></p>
+                <button id="editBtn" class="edit-btn">Редагувати</button>
+            </div>
+
+            <!-- Режим редагування -->
+            <div id="accountEdit" class="account-mode" style="display: none;">
+                <form id="accountForm">
+                    <div class="form-group">
+                        <label for="editName">Ім'я:</label>
+                        <input type="text" id="editName" value="Dmytro Daniuk" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editEmail">Email:</label>
+                        <input type="email" id="editEmail" value="dimasdaniuk@gmail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editPhone">Телефон:</label>
+                        <input type="tel" id="editPhone" value="+380 99 123 45 67" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editAddress">Адреса:</label>
+                        <input type="text" id="editAddress" value="м. Львів, вул. Степана Бандери, 12" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editPostal">Поштове відділення:</label>
+                        <input type="text" id="editPostal" value="Львів, №5" required>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" class="save-btn">Зберегти</button>
+                        <button type="button" id="cancelBtn" class="cancel-btn">Скасувати</button>
+                    </div>
+                </form>
+            </div>
+
+            <h3>Історія покупок:</h3>
+            <ul>
+                <li>Замовлення #123 - "Енеїда" (Виконано)</li>
+                <li>Замовлення #124 - "Місто" (В дорозі)</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 BookStore. Всі права захищені.</p>
+        <p>Адреса: м. Львів, вул. Степана Бандери, 12</p>
+        <p>Email: support@bookstore.com | Тел: +380 99 123 45 67</p>
+    </footer>
+
+    <script>
+        // Account Edit Functionality
+        const editBtn = document.getElementById('editBtn');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const accountForm = document.getElementById('accountForm');
+        const accountView = document.getElementById('accountView');
+        const accountEdit = document.getElementById('accountEdit');
+
+        // Show edit form
+        editBtn.addEventListener('click', function() {
+            accountView.style.display = 'none';
+            accountEdit.style.display = 'block';
+            document.getElementById('editName').focus();
+        });
+
+        // Cancel editing
+        cancelBtn.addEventListener('click', function() {
+            accountForm.reset();
+            accountEdit.style.display = 'none';
+            accountView.style.display = 'block';
+        });
+
+        // Save edited data
+        accountForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('editName').value;
+            const email = document.getElementById('editEmail').value;
+            const phone = document.getElementById('editPhone').value;
+            const address = document.getElementById('editAddress').value;
+            const postal = document.getElementById('editPostal').value;
+
+            // Update view mode elements
+            document.getElementById('viewName').textContent = name;
+            document.getElementById('viewEmail').textContent = email;
+            document.getElementById('viewPhone').textContent = phone;
+            document.getElementById('viewAddress').textContent = address;
+            document.getElementById('viewPostal').textContent = postal;
+
+            // Save to localStorage
+            localStorage.setItem('accountData', JSON.stringify({
+                name: name,
+                email: email,
+                phone: phone,
+                address: address,
+                postal: postal
+            }));
+
+            // Switch back to view mode
+            accountEdit.style.display = 'none';
+            accountView.style.display = 'block';
+        });
+
+        // Load saved data from localStorage on page load
+        window.addEventListener('load', function() {
+            const savedData = localStorage.getItem('accountData');
+            if (savedData) {
+                const data = JSON.parse(savedData);
+                document.getElementById('viewName').textContent = data.name;
+                document.getElementById('viewEmail').textContent = data.email;
+                document.getElementById('viewPhone').textContent = data.phone;
+                document.getElementById('viewAddress').textContent = data.address;
+                document.getElementById('viewPostal').textContent = data.postal;
+
+                document.getElementById('editName').value = data.name;
+                document.getElementById('editEmail').value = data.email;
+                document.getElementById('editPhone').value = data.phone;
+                document.getElementById('editAddress').value = data.address;
+                document.getElementById('editPostal').value = data.postal;
+            }
+        });
+    </script>
+
+</body>
+</html>
